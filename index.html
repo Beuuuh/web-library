@@ -14,11 +14,28 @@
     </div>
 
     <div class="container2">
+        <h2 class="warning"></h2>
         <button class="addbook">+ Add Button</button>
     </div>
 
     <div class="footer">
         <p>Copyright © <a href="#">Beuuuh.</a> In conjunction with <a href="https://www.theodinproject.com">The Odin Project</a></p>
+    </div>
+
+    <div class="popup">
+        <form class="form">
+            <h3 class="newbook"></h3>
+            <input class="input" type="text" placeholder="Title" required>
+            <input class="input" type="text" placeholder="Author" required>
+            <input class="input" type="number" placeholder="Pages" required max="5000">
+
+            <div class="isread">
+                <label for="isread">Have you read it?</label>
+                <input class="checkbox" type="checkbox">
+            </div>
+
+            <button class="submitbtn" type="submit">Submit</button>
+        </form>
     </div>
 
     <script src="./app.js"></script>
