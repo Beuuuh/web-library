@@ -5,6 +5,7 @@ const POPUP = document.querySelector(".popup");
 const TITLE = document.querySelector(".title");
 const AUTHOR = document.querySelector(".author");
 const PAGES = document.querySelector(".page");
+const READ = document.querySelector(".checkbox");
 const SUBMIT = document.querySelector(".submitbtn");
 
 ADDBOOK.addEventListener("click", showPopUp);
@@ -14,12 +15,14 @@ let library = [];
 let title;
 let author;
 let pages;
+let read;
 let newBook;
 
-function book(name, author, pages) {
+function book(name, author, pages, read) {
     this.name = name;
     this.author = author;
     this.pages = pages;
+    this.read = read
 }
 
 function addToLibrary(book) {
@@ -41,6 +44,17 @@ function addNewBook(event) {
     title = TITLE.value;
     author = AUTHOR.value;
     pages = PAGES.value;
-    let newBook = new book(title, author, pages);
+    read = READ.checked;
+    let newBook = new book(title, author, pages, read);
     addToLibrary(newBook);
+    render();
+    clearForm();
+}
+
+function clearForm() {
+    POPUP.hidden = true;
+    TITLE.value = "";
+    AUTHOR.value = "";
+    PAGES.value = "";
+    READ.checked = false;
 }
