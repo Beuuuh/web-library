@@ -33,6 +33,8 @@ function addToLibrary(book) {
 function render() {
     if(library.length == 0) {
         WARNING.innerHTML = "You have no books!";
+    } else {
+
     }
 }
 
@@ -50,6 +52,7 @@ function addNewBook(event) {
     addToLibrary(newBook);
     render();
     clearForm();
+    createCard(title, author, pages, read);
 }
 
 function clearForm() {
@@ -60,18 +63,27 @@ function clearForm() {
     READ.checked = false;
 }
 
-function createCard() {
+function createCard(title, author, pages, read) {
     let cardTitle = document.createElement("h3");
-    cardTitle.innerHTML = "TEST";
+    cardTitle.innerHTML = title;
+    
     let cardAuthor = document.createElement("h3");
-    cardAuthor.innerHTML = "TEST";
+    cardAuthor.innerHTML = author;
+    
     let cardPages = document.createElement("h3");
-    cardPages.innerHTML = "TEST";
+    cardPages.innerHTML = pages;
+    
     let label = document.createElement("h3");
-    label.innerHTML = "TEST";
+    label.innerHTML = "Read: ";
+    
     let card = document.createElement("div");
+    
     let checkbox = document.createElement("input");
     checkbox.type = "checkbox";
+
+    if(read == true) {
+        checkbox.checked = true;
+    }
 
     CARDLIBRARY.appendChild(card);
     card.setAttribute("class", "card");
