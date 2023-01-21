@@ -7,6 +7,7 @@ const AUTHOR = document.querySelector(".author");
 const PAGES = document.querySelector(".page");
 const READ = document.querySelector(".checkbox");
 const SUBMIT = document.querySelector(".submitbtn");
+const CARDLIBRARY = document.querySelector(".cardlibrary");
 
 ADDBOOK.addEventListener("click", showPopUp);
 SUBMIT.addEventListener("click", addNewBook);
@@ -57,4 +58,26 @@ function clearForm() {
     AUTHOR.value = "";
     PAGES.value = "";
     READ.checked = false;
+}
+
+function createCard() {
+    let cardTitle = document.createElement("h3");
+    cardTitle.innerHTML = "TEST";
+    let cardAuthor = document.createElement("h3");
+    cardAuthor.innerHTML = "TEST";
+    let cardPages = document.createElement("h3");
+    cardPages.innerHTML = "TEST";
+    let label = document.createElement("h3");
+    label.innerHTML = "TEST";
+    let card = document.createElement("div");
+    let checkbox = document.createElement("input");
+    checkbox.type = "checkbox";
+
+    CARDLIBRARY.appendChild(card);
+    card.setAttribute("class", "card");
+    card.appendChild(cardTitle);
+    card.appendChild(cardAuthor);
+    card.appendChild(cardPages);
+    card.appendChild(label);
+    card.appendChild(checkbox);
 }
